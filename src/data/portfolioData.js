@@ -28,15 +28,15 @@ export const personalInfo = {
   location: "",
   
   // Contact info
-  email: "",
+  email: "lnandakishorechowdary@gmail.com",
   phone: "",
   
   // Social media profile links (empty - no verified URLs provided)
   socialLinks: {},
 
-  // Path to verified resume file (null - no verified resume in project)
-  resumeUrl: null,
-  resumeFileName: ""
+  // Path to verified resume file
+  resumeUrl: "/sample-resume.pdf",
+  resumeFileName: "Lavu_Nandakishore_Chowdary_Resume.pdf"
 };
 
 /**
@@ -257,9 +257,14 @@ export const contactData = {
 export const resumeData = {
   sectionTitle: "Resume",
   sectionSubtitle: "Academic background and curriculum vitae",
-  fileName: "",
-  fileSize: "",
-  lastUpdated: "",
-  downloadUrl: null,
-  highlights: []
+  fileName: "Lavu_Nandakishore_Chowdary_Resume.pdf",
+  fileSize: "PDF Document",
+  lastUpdated: "2026",
+  downloadUrl: "/sample-resume.pdf",
+  highlights: [
+    "Contributed to the development of an academic software project.",
+    "Developed frontend components and user interfaces using React.",
+    "Collaborated within a four-member team to coordinate and deliver project tasks.",
+    "Assisted with database design and management."
+  ]
 };

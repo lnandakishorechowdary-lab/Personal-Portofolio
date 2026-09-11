@@ -57,7 +57,6 @@ export default function ResumeSection() {
                     <Calendar size={13} /> Updated: {resumeData.lastUpdated}
                   </span>
                 </div>
-                <span className="placeholder-badge">Ready for your real PDF</span>
               </div>
             </div>
 
@@ -177,15 +176,32 @@ export default function ResumeSection() {
                 </section>
 
                 <section className="paper-section">
-                  <h3 className="paper-sec-title">CERTIFICATIONS</h3>
-                  <div className="paper-cert-list">
-                    {certificationsData.certifications.map((cert, idx) => (
-                      <div key={idx} className="paper-cert-item">
-                        • <strong>{cert.title}</strong> — {cert.issuer} ({cert.issueDate})
-                      </div>
-                    ))}
+                  <h3 className="paper-sec-title">ACADEMIC PROJECT EXPERIENCE</h3>
+                  <div className="paper-item">
+                    <div className="paper-item-header">
+                      <strong>Academic Engineering Project</strong>
+                      <span>Team of 4</span>
+                    </div>
+                    <ul className="paper-bullet-list">
+                      {resumeData.highlights.map((bullet, idx) => (
+                        <li key={idx}>{bullet}</li>
+                      ))}
+                    </ul>
                   </div>
                 </section>
+
+                {certificationsData.certifications && certificationsData.certifications.length > 0 && (
+                  <section className="paper-section">
+                    <h3 className="paper-sec-title">CERTIFICATIONS</h3>
+                    <div className="paper-cert-list">
+                      {certificationsData.certifications.map((cert, idx) => (
+                        <div key={idx} className="paper-cert-item">
+                          • <strong>{cert.title}</strong> — {cert.issuer} ({cert.issueDate})
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                )}
               </div>
             </div>
           </div>
@@ -483,6 +499,17 @@ export default function ResumeSection() {
           justify-content: space-between;
           font-size: 0.82rem;
           color: #64748b;
+        }
+
+        .paper-bullet-list {
+          margin: 0.4rem 0 0.5rem 1.25rem;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.3rem;
+          font-size: 0.84rem;
+          color: #334155;
+          line-height: 1.5;
         }
 
         .paper-cert-list {
