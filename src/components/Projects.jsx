@@ -16,16 +16,16 @@ import {
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('All');
 
+  const allProjects = projectsData?.projects || [];
   const filteredProjects = activeCategory === 'All'
-    ? projectsData.projects
-    : projectsData.projects.filter(p => p.category === activeCategory);
+    ? allProjects
+    : allProjects.filter(p => p.category === activeCategory);
 
   const getCategoryIcon = (category) => {
     switch (category) {
-      case 'Full-Stack': return <Layers size={14} />;
-      case 'Frontend': return <Monitor size={14} />;
-      case 'Backend': return <Server size={14} />;
-      case 'Mobile/API': return <Smartphone size={14} />;
+      case 'AI/ML': return <Layers size={14} />;
+      case 'Web/App': return <Monitor size={14} />;
+      case 'Hardware/IoT': return <Server size={14} />;
       default: return <Code size={14} />;
     }
   };
@@ -106,7 +106,6 @@ export default function Projects() {
               <div className="project-body">
                 <div className="project-title-row">
                   <h3 className="project-title">{project.title}</h3>
-                  <span className="placeholder-badge">Placeholder</span>
                 </div>
 
                 <p className="project-tagline">{project.tagline}</p>

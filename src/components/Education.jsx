@@ -56,7 +56,6 @@ export default function Education() {
                       <Award size={14} />
                       <span>{item.grade}</span>
                     </span>
-                    <span className="placeholder-badge">Placeholder</span>
                   </div>
                 </div>
 
